@@ -1,0 +1,23 @@
+@media (max-width: 767px) {
+    #myTab{
+        width: 100%;
+    }
+    #myTab li{
+        width: 25%;
+    }
+    #myTab li a{
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center;
+    }
+}
+#myTab{margin-bottom: .5em}
+.tabc{width: 100%;}
+.tabc img{max-width: 100% !important;}
+@media (min-width: 768px) {
+    #tabbigWrap{width: 70%;margin: 0 auto;font-size: 1.25em;}
+    #myTab {
+        width: 70%;
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,44 @@
+<style type="text/css">
+     label {font-weight:normal !important;}
+</style>
+<div ng-controller="loginCtrl" class="content" scrollable>
+
+<form class="form-horizontal well" role="form" ng-submit="sendForm()">
+    <div class="form-group">
+        <label for="user_name" class="col-lg-2 control-label">用户名：</label>
+        <div class="col-lg-10">
+            <input type="text" class="form-control" id="user_name" name="user_name" placeholder="请输入用户名" ng-model="form.user_name" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="user_password" class="col-lg-2 control-label">密&nbsp;&nbsp;&nbsp;码：</label>
+        <div class="col-lg-10">
+            <input type="password" class="form-control" id="user_password" name="user_password" placeholder="请输入密码" ng-model="form.user_password" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <div class="checkbox">
+                <label><input type="checkbox" name="rememberPsw" ng-model="form.rememberPsw" >记住密码</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10" >
+            <div class="row">
+                <div class="col-xs-6">
+                    <button type="button" class="btn btn-default pull-right" onclick="return false" nav-to="/register">注册</button>
+                </div>
+                <div class="col-xs-6">
+                    <button type="submit" class="btn btn-primary pull-left"  ng-init="subBtn={isOff:false,submitText:'登录'}" ng-disabled="subBtn.isOff">{{subBtn.submitText}}</button>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+</form>
+
+    <div id='loginAlert' class="pureBlock"></div>
+
+
+</div>

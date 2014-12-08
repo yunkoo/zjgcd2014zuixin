@@ -1,0 +1,50 @@
+<div ng-controller="newsCtrl" class="content hasPagination" scrollable>
+    <link rel="stylesheet" href="css/nganimate.css">
+    <link rel="stylesheet" href="css/news.css">
+    <link rel="stylesheet" href="css/adsorbNav.css">
+    <ul id="newsTab" class="nav nav-pills adsorbNav">
+        <li ng-class="{1:'active', 2:''}[news.newscatIndex]" >
+            <a hm-tap="getContent(1)" class="trade-trend">行业动态</a>
+        </li>
+        <li ng-class="{1:'', 2:'active'}[news.newscatIndex]">
+            <a hm-tap="getContent(2)" class="company-news">公司新闻</a>
+        </li>
+    </ul>
+    <!--吸附式二级菜单修复 -->
+    <!--<div id="lv2navfix" class="pureBlock"></div>-->
+    <!--<script>-->
+        <!--(function(){-->
+            <!--var tabH=$('.adsorbNav').height();-->
+            <!--var fixer=$('#lv2navfix');-->
+            <!--fixer.height(tabH);-->
+        <!--})()-->
+    <!--</script>-->
+
+
+    <div id="newsTabContent" class="tab-content adsorbNav-tabContentbox" ng-animate="animateType" ng-switch on="news.newscatIndex">
+        <div id='newsAlert' class="pureBlock"></div>
+        <div class="tabc" ng-switch-when="1">
+            <p>
+                <ul class="list-group">
+                    <li data-ng-repeat="n in newsList" class="list-group-item icon-edit" style="overflow:hidden;"><a nav-to="/newsDetail/{{n.aid}}">{{n.title}}</a><time class="pull-right" style="font-size:0.8em;">{{n.createtime}}</time></li>
+                </ul>
+            </p>
+
+            <div class="alert alert-warning" ng-if="noNews1">没有行业动态！</div>
+        </div>
+
+        <div class="tabc" ng-switch-when="2">
+            <p>
+                <ul class="list-group">
+                    <li data-ng-repeat="n in newsList" class="list-group-item icon-edit" style="overflow:hidden;"><a nav-to="/newsDetail/{{n.aid}}">{{n.title}}</a><time class="pull-right" style="font-size:0.8em;">{{n.createtime}}</time></li>
+                </ul>
+                
+            </p>
+            
+            <div class="alert alert-warning" ng-if="noNews2">没有公司新闻！</div>
+        </div>
+
+    </div>
+    <div id='statusAlert' class="pureBlock"></div>
+
+</div>

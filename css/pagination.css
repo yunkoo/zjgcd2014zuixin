@@ -1,0 +1,27 @@
+#pagination{
+    position: relative;
+    -webkit-transition: height 2s;
+    transition: height 2s;
+    height: 3.3rem;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.6);
+
+}
+#pagination .pageinationBtn{
+    font-size: 2.7rem;
+    line-height: 2.7rem;
+    height: 100%;
+    color: #ffffff;
+    text-shadow: 0 0 3px #428bca;
+}
+#pagination .pageinationBtn.disable{
+    color:grey;
+}
+#pageNow span{
+    text-shadow: 0 0 1em #428bca;
+    font-size: 2rem;
+}
+
+.hasPagination{
+    padding-bottom: 3.5rem;
+}

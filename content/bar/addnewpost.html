@@ -1,0 +1,33 @@
+<!--<link rel="stylesheet" href="css/webfont/fontello/css/fontello.css">-->
+
+<div class="content">
+
+    <div id='loginAlert' class="pureBlock"></div>
+
+    <form class="form-horizontal well" role="form" ng-submit="sendnewPost()">
+        <div class="form-group" ng-if="!iscommenting">
+            <input ng-model="postPrams.subject" required type="text" class="form-control input-lg" placeholder="标题"/>
+            <!--<div class="input-group input-group-lg">-->
+                <!--<span class="input-group-addon"><i class="icon-quote-left"></i></span>-->
+                <!--<input type="text" class="form-control input-lg" placeholder="标题"/>-->
+                <!--<span class="input-group-addon"><i class="icon-quote-right"></i></span>-->
+            <!--</div>-->
+        </div>
+        <div class="form-group" ng-if="!iscommenting">
+            <select ng-model="postPrams.forumSelect" required
+                    class="form-control input-lg"
+                    ng-options="bar.name for bar in barlist">
+                <option ng-value="" selected="selected">选择发帖版块</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <textarea required ng-model="postPrams.message"
+                      class="form-control input-lg" rows="5" placeholder="这里填写详细内容">
+
+            </textarea>
+        </div>
+
+
+        <button ng-disabled="submittingText" class="btn btn-primary btn-lg btn-block" type="submit">提交{{submittingText}}</button>
+    </form>
+</div>

@@ -1,0 +1,92 @@
+#topcat{
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.graytext{
+    color:#999;
+}
+#postWrap{
+    border: 1px solid #e5e5e5;
+}
+@media (min-width: 768px) {
+    #postWrap {
+        width: 70%;
+        margin: 0 auto;
+        font-size: 1.25em;
+        border: 3px solid #e5e5e5;
+    }
+    #topcat{text-align: center}
+}
+
+#postWrap header{
+    padding: .8em .8em 0 .8em;
+}
+
+
+#postWrap .media{
+    margin-bottom: 1.5em;
+}
+.posterhead{
+    width: 3em;
+    max-height: 3em;
+}
+.posterhead img{max-width: 100%;max-height: 100%}
+
+#postContent{
+    background-color: #F8F8F8;
+}
+#messages{margin-bottom: 0;}
+#messages li{padding: 5px;position: relative;z-index: 1}
+#messages li:last-of-type{
+     margin-bottom: 0;
+}
+#messages .backToggle{
+    background-color: #F8F8F8;
+   position: absolute;top: 0;right: 0;bottom: 0;left: 0;
+    z-index: 2;
+    padding: 0.5em;
+    border: 2px dashed #428bca;
+}
+.toggleInner{
+    font-size: 2em;
+    position: relative;
+    height: 100%;
+    display: table;
+}
+
+.toggleInner>a{
+    margin: auto 0.5em;
+    display: table-cell;
+    height: 100%;
+    vertical-align:middle;
+}
+
+#postersMessage{
+    border-left: 5px solid #d0e3f0;
+    background-color: white;
+}
+#postersMessage .backToggle{
+    background-color: inherit;
+}
+
+
+#messages .messageContent{word-break: break-all;}
+
+#trueComment img.media-object{
+    width: 1.5em;
+    max-height: 1.5em;
+}
+
+#trueComment .headerIcon{
+    font-size: 1.5em;
+    color: #333333;
+}
+
+#trueComment .toggleInner{
+    font-size: 1.5em;
+}
+
+#loadmore{
+    min-height: 2.5em;
+    text-align: center;
+}

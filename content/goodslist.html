@@ -1,0 +1,32 @@
+<style>
+    .productImg { display:inline-block; width:3.8em; height:3.8em; background-size:contain;  -webkit-background-size:contain; background-position:center center; background-repeat:no-repeat;}
+    @media (min-width: 768px){
+       #goodslistContent{
+           padding-top:4em;
+       }
+
+    }
+</style>
+<div ng-controller="goodslistCtrl" id="goodslistContent" class="contentNoWebkitTouch" scrollable>
+    <div id='glAlert' class="pureBlock">
+
+    </div>
+    <div class="list-group">
+
+            <a class="list-group-item" data-ng-repeat="g in goodslist" nav-to="/goodsDetail/{{g.id}}">
+                <div class="media">
+                    <span class="pull-left">
+                        <div class="media-object productImg" ng-style="{'backgroundImage':'url({{imgdir + g.img_thumb}})'}"></div>
+                    </span>
+                    <div class="media-body">
+                        <h4 class="list-group-item-heading">{{g.title}}</h4>
+                        <p class="list-group-item-text" style="color:orangered;"> ￥ {{g.price}}</p>
+                    </div>
+                </div>
+            </a>
+    </div>
+
+
+</div>
+
+

@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="css/webfont/my-fonts/stylesheet.css"/>
+<style>
+.looper {border-color:RGBA(66,139,202,0.3);}
+.goodTitle{ background-color:RGBA(66,139,202,0.1);border-bottom: 0; padding: 10px 15px; border-top-right-radius: 3px; border-top-left-radius: 3px; }
+.goodTitle h2 {margin-top: 0; margin-bottom: 0; font-size: 16px; }
+.goodTitle h2 a {font-size:18px; }
+.tx-white a {color:#FFF;}
+.goodContent a {color:#666;}
+</style>
+<div ng-controller="goodsCtrl" class="content">
+    <div id='statusAlert' class="pureBlock"></div>
+    <div class="panel-group" id="goodsAccordion">
+
+        <div class="looper panel panel-default" data-ng-repeat="product in products">
+            <div class="goodTitle" >
+                <h2>
+                    <a class="{{product.icon_class}}">
+                        {{product.name}}
+                    </a>
+                </h2>
+            </div>
+            <div class="goodContent collapse" >
+                <div class="panel-body">
+                    <a class="list-group-item" data-ng-repeat="p in product.sub" nav-to="/goodslist/{{p.id}}">
+                        {{p.name}}
+                        <i class="pull-right fui-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $("#goodsAccordion").on("click",".goodTitle",function() {
+         if ($(this).next().css('display') == 'block') {
+            $(this).removeClass("blueBack tx-white");
+            $(this).next().hide();
+        } else {
+            $(".goodContent").hide();
+            $(".goodTitle").removeClass('blueBack tx-white');
+            $(this).next().show();
+            $(this).addClass('blueBack tx-white');
+        }
+    })
+</script>
+

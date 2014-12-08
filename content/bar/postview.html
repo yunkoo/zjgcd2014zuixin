@@ -1,0 +1,109 @@
+<link rel="stylesheet" href="css/postview.css">
+<link rel="stylesheet" href="css/webfont/fontello/css/fontello.css">
+<link rel="stylesheet" href="css/webfont/fontello/css/animation.css">
+<style>
+    #topTiper{
+        font-size: 0.9em;
+        line-height: 0.9em;
+        margin-top: -1em;
+    }
+</style>
+<div data-ng-controller="postviewCtrl" class="content">
+   <article id="postWrap" ng-if="postinfo">
+       <header>
+           <div id="topcat" class="graytext">
+               <p >
+                   {{postinfo.name | truncate:17}}
+               </p>
+               <!--<span id="topTiper" class="pull-right">双击某条以回复或评论</span>-->
+           </div>
+
+           <div class="media">
+               <a class="posterhead pull-left">
+                   <img class="media-object" ng-src="{{imgURL+postinfo.userhead}}">
+               </a>
+               <div class="media-body">
+                   <h3 class="media-heading">{{postinfo.subject}}</h3>
+               </div>
+           </div>
+
+       </header>
+
+
+       <section id="postContent">
+
+           <ul id="messages" class="media-list">
+               <li id="postersMessage" class="media" togglereplybtn>
+                   <div class="media-body">
+                       <div class="pureBlock clearfix">
+                       <h4 class="media-heading pull-left">
+                            <span class="glyphicon glyphicon-user rightmarg5"></span>
+                           {{postinfo.username | truncate:17}}(楼主)
+                       </h4>
+                       <span class="graytext pull-right">{{postinfo.create_time}}</span>
+                       </div>
+                       <p class="messageContent" style="font-size:1.2em;text-align: center;">
+                           <i class="icon-quote-left"></i>
+                           {{postinfo.message}}
+                           <i class="icon-quote-right"></i>
+                       </p>
+                   </div>
+
+                   <div class="pureBlock backToggle flexbox-center" ng-show="toggleing">
+                       <div class="toggleInner">
+                           <a class="toggleClick" ng-click="comment(postinfo.pid);$event.stopPropagation();">
+                               <span class="icon-comment"></span>评论主贴</a>
+                       </div>
+                   </div>
+
+               </li>
+
+               <!--准回复开始-->
+
+               <li id="trueComment" class="media" togglereplybtn
+                    ng-repeat="c in trueComments">
+
+                   <a class="pull-left" ng-if="postinfo.uid!=c.uid">
+                       <img ng-if="c.userhead" class="media-object" ng-src="{{imgURL+c.userhead}}">
+                   </a>
+                   <a ng-if="postinfo.uid==c.uid" style="font-size: 1.5em"
+                         class="headerIcon pull-left glyphicon glyphicon-user">
+                   </a>
+
+                   <div class="media-body">
+                       <div class="pureBlock clearfix">
+                           <h4 class="media-heading pull-left blueText">
+                               {{c.username | truncate:17}}
+                           </h4>
+                           <span class="graytext pull-right">{{c.createtime}}</span>
+                       </div>
+                       <p class="messageContent">{{c.content}}</p>
+                   </div>
+
+                   <div class="pureBlock backToggle flexbox-center" ng-show="toggleing">
+                       <div class="toggleInner">
+                           <a ng-click='comment(postinfo.pid,c.username);$event.stopPropagation();'>
+                               <span class="icon-reply"></span>回复{{c.username | truncate:17}}
+                           </a>
+                           <a>&nbsp;&nbsp;</a>
+                           <a ng-click='comment(postinfo.pid,c.username,c.content);$event.stopPropagation();'>
+                               <span class="icon-quote-left"></span>引用
+                           </a>
+                       </div>
+                   </div>
+
+               </li>
+
+               <li id="loadmore" hm-tap="loadmore.Act()">
+                   <div>
+                       <span class="icon-spin3" ng-class="{true:'animate-spin',false:''}[loadmore.isloading]"></span>{{loadmore.standbyText}}
+                   </div>
+               </li>
+
+           </ul>
+
+
+       </section>
+
+   </article>
+</div>

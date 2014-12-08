@@ -1,0 +1,20 @@
+.content {background-color:RGBA(225,225,225,0.4);}
+#userInfo {height:8.78em; background-color:RGBA(7,185,217,0.7); text-align:center;}
+#userInfo .imgWrap {width:4em; height:4em; margin:0 auto;}
+#userInfo img {width:4em; height:4em;}
+#userInfo h4 {color:#FFF; font-weight:bold; text-align:center;}
+#postInfo { box-shadow:0px 0px 1px gray; }
+#postInfo td {text-align:center; }
+#postInfo td div {margin-top:0.5em;}
+#logout {
+    background-color:RGBA(225,225,225,0.4);
+    background-image:url(../images/3.png),url(../images/4.png);
+    background-repeat:no-repeat,no-repeat;
+    background-position:5% center,95% center;
+    background-size:20px 20px; 
+    -webkit-background-size:20px 20px; 
+    box-shadow:0px 0px 1px gray;
+    color:#737373;
+    text-align:left;
+    padding-left:15%;
+}

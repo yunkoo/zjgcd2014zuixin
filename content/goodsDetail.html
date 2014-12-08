@@ -1,0 +1,40 @@
+        <style>
+            .row{margin-right: 0;margin-left: 0;}
+            @media (max-width: 992px){
+                #goodImgWrap{max-height: 17em;}
+            }
+
+        </style>
+<div ng-controller="goodsDetailCtrl" class="contentNoWebkitTouch">
+
+
+        <div id='gdAlert' class="pureBlock">
+
+        </div>
+
+        <div class="thumbnail row">
+        <div class="col-md-6 text-center">
+            <img ng-src="{{imgdir + goodsDetail.img1}}">
+        </div>
+        <div class="col-md-6">
+            <h3 style="text-align:center;">{{goodsDetail.title}}</h3>
+            <p style="color:orangered;">{{goodsDetail.intro}}</p>
+            <p><span class="label label-info">售价：</span><span style="color:orangered; font-weight:900;"> ￥{{goodsDetail.price}}</span></p>
+            <p data-ng-bind-html="goodsDetail.detail">
+            </p><p>
+            <div class="flexbox-center">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary" nav-to="/morePic">更多图片</button>
+                    <button type="button" id="customer" class="btn btn-default" data-toggle="popover" data-animation="false" data-placement="top" data-html="true" data-content="{{customer}}">
+                        &nbsp;&nbsp;客　服&nbsp;&nbsp;
+                    </button>
+                </div>
+            </div>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $('#customer').popover({})
+</script>

@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="css/webfont/fontello/css/fontello.css"/>
+<style>
+    #pageNow span{
+      font-size:inherit;
+    }
+    .userheadimg{
+        width: 1em;height: 1em;
+        margin-right: 0.8em;
+    }
+    .lefttext{
+        text-align: left;float: left;margin-right: 2.3em;
+    }
+    .listtext{
+        text-align: right;
+    }
+</style>
+<div id="postlistContent" class="content hasPagination">
+    <div id="postlist" class="list-group">
+        <a nav-to="/postview/{{post.pid}}" class="list-group-item" ng-repeat="post in postlist">
+            <h4 class="list-group-item-heading">
+                <img class="userheadimg media-object pull-left" data-ng-src="{{imgURL+post.userhead}}" />
+                {{post.subject}}
+            </h4>
+            <p class="lefttext">
+                <span class="icon-chat" ng-class="{true:'carrotText', false:''}[post.personnum>10]">{{post.comment_num}}</span>
+                <span class="icon-comment" data-ng-show="post.alertmessage > 0" style="margin-left:1em;">{{post.alertmessage}}</span>
+                </p>
+            <p class="listtext list-group-item-text" style="font-size:0.8em;">{{post.create_time}}</p>
+        </a>
+    </div>
+    <div class="alert alert-warning" ng-if="noPosts2" >您还没回复过任何帖子哟！^_^</div>
+</div>

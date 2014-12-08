@@ -1,0 +1,57 @@
+<style>
+    .barItem{
+        -webkit-box-shadow: 0 0 5px grey;
+        box-shadow: 0 0 5px grey;
+        position: relative;
+        border-radius: 0;
+    }
+    .barItem .panelbackground{
+        position: absolute;z-index: 0;
+        top:0;bottom: 0;left: 0;right: 0;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .barItem .panel-body{
+        position: relative;
+        min-height: 7em;
+    }
+    .barItem h3{
+        font-size: 2em;font-weight: bold;
+        line-height: 100%;
+        text-shadow: 0 0 0.2em white;
+    }
+    .noblur .panelbackground{
+        -webkit-filter: none;
+        -moz-filter: none;
+        -o-filter: none; -ms-filter: none;
+        filter: none;
+    }
+    @media (min-width: 768px) {
+        .barItem h3{text-align: center;}
+    }
+</style>
+
+<div id="barlistContent" data-ng-controller="barlistCtrl" class="content" scrollable>
+
+    <div id='barAlert' class="pureBlock"></div>
+    <div class="barItem panel panel-default" touchact="noblur"
+         nav-to="/postsList/{{item.fid}}"
+         ng-repeat="item in barlist">
+        <div class="pureBlock panelbackground blur2" ng-style="{'background-image':'url('+imgURL+item.image+')'}">
+        </div>
+        <div class="panel-body">
+            <h3>{{item.name}}</h3>
+        </div>
+    </div>
+
+<!--<div class="list-group">-->
+    <!--<a class="list-group-item" ng-repeat="item in barlist">-->
+        <!--<h4 class="list-group-item-heading">{{item.name}}</h4>-->
+        <!--&lt;!&ndash;<p class="list-group-item-text">蛋疼</p>&ndash;&gt;-->
+    <!--</a>-->
+
+
+<!--</div>-->
+
+</div>

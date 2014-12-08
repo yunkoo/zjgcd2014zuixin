@@ -1,0 +1,22 @@
+<style>
+    #tip{
+        position: absolute;
+        bottom: 0;
+        z-index: 15;text-align: center;
+        width: 99%;
+    }
+</style>
+<div ng-controller="morePicCtrl" class="content" id="morePic">
+    <link rel="stylesheet" href="css/morePic.css">
+    <script type="text/javascript" src="libs/cardview.js"></script>
+    <div id="wrapper" ng-if="newPicArr">
+        <ul id="deck">
+            <li class="card" ng-repeat="picture in newPicArr track by $id($index)">
+                <div>
+                    <img src="{{picture.img}}">
+                </div>
+            </li>
+        </ul>
+        <div ng-show="newPicArr.length>1" id="tip" class="pureBlock blueText"><span class="glyphicon glyphicon-chevron-up"></span></div>
+    </div>
+</div>

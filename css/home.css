@@ -1,0 +1,77 @@
+#homeContent{
+    background:url('../images/hc.jpg') 50% 50% no-repeat;
+    background-size: cover;
+}
+ul,ol { list-style: none;}
+img {border:none;}
+#hex{
+    position: absolute;top:50%;left: 50%;
+    margin-left: -11.62em;margin-top: -11.62em;
+    padding:0;
+    /*margin:50% auto;*/
+    list-style:none; width:23.214em; font-size:0.85em; }
+#hex li{display:block;float:left;width:7.428em;margin-right:0.285em;height:8.571em; box-sizing: content-box; -webkit-box-sizing: content-box; -moz-box-sizing: content-box;}
+
+#hex li.p1{padding-left:3.857em;}
+#hex li.p2{margin-top:-1.857em;}
+
+#hex li a{text-decoration:none;color:#000;cursor:pointer;}
+#hex li a b{display:block;width:0;height:0;overflow:hidden;border-bottom:2.142em solid #3498DB;border-left:3.714em dotted transparent;border-right:3.714em dotted transparent;}
+#hex li a span{display:block;width:7.428em;height:4.285em;text-align:center;background:#3498DB; line-height:4.285em; color:#ECF0F1; font-weight: bold;}
+#hex li a em{display:block;width:0;height:0;overflow:hidden;border-top:2.142em  solid #3498DB;border-left:3.714em dotted transparent;border-right:3.714em dotted transparent;}
+
+#hex li a:hover{white-space:normal;color:#fff;}
+#hex li a:hover b{border-bottom-color: #45cccb;}
+#hex li a:hover span{background:#45cccb;}
+#hex li a:hover em{border-top-color:#45cccb;}
+#hex [class^="icon-"]:before,#hex [class*=" icon-"]:before {
+    font-size: 2.5em;
+    display: block;
+    width: 100%;
+    text-align: center;
+    line-height: 0.3em;
+    margin-right: 0em;
+    margin-left: 0em;
+    padding-top: 0.3em;
+}
+/*新评论提示*/
+#new-comment-tips {
+    position: absolute;
+    bottom: 0em;
+    right: 0em;
+    width: 4em;
+    height: 4em;
+    background: #3498DB;
+    border-top-left-radius: 4em;
+    -webkit-border-top-left-radius: 4em;
+}
+#new-comment-tips span {
+    position: absolute;
+    left: 1em;
+    top: 1.8em;
+    color: #ffffff;
+}
+/* 窗口宽度在480px以下 */
+@media screen and (max-width:480px){
+    #hex{font-size:0.85em}
+}
+/* 窗口宽度在480px以上、768px以下 */
+@media screen and (min-width: 481px) and (max-width: 767px){
+    #hex{font-size:1.2em}
+}
+/* 窗口宽度在768pxpx以上 */
+@media (min-width: 768px) {
+    #hex{font-size:1.5em}
+}
+
+/*
+@media (max-height: 600px) {
+    #hex{
+        position: static;top:0;left: 0;
+        margin-left:auto;margin-top: auto;
+        padding:0;
+        margin:0 auto;
+    }
+
+}
+*/

@@ -1,0 +1,46 @@
+<div ng-controller="summaryCtrl" class="content">
+    <link rel="stylesheet" href="css/nganimate.css">
+    <link rel="stylesheet" href="css/summary.css">
+    <link rel="stylesheet" href="css/adsorbNav.css">
+    <ul id="myTab" class="nav nav-tabs adsorbNav">
+        <li class="active">
+            <a data-toggle="tab" hm-tap="getContent(1)">企业文化</a>
+        </li>
+        <li>
+            <a data-toggle="tab" hm-tap="getContent(2)">企业优势</a>
+        </li>
+        <li>
+            <a data-toggle="tab" hm-tap="getContent(3)">企业荣誉</a>
+        </li>
+        <li>
+            <a data-toggle="tab" hm-tap="getContent(4)">发展历程</a>
+        </li>
+    </ul>
+<section id="tabbigWrap" class="pureBlock adsorbNav-tabContentbox">
+
+
+
+
+
+<div class="tab-content" id="tabcWrap" ng-animate="animateType" ng-switch on="summary.summaryIndex">
+
+        <div class="tabc" ng-bind-html="summary.content1" ng-switch-when="1" id="home">
+
+        </div>
+        <div class="tabc" ng-bind-html="summary.content2" ng-switch-when="2"  id="profile">
+
+        </div>
+        <div class="tabc" ng-bind-html="summary.content3" ng-switch-when="3"  id="dropdown1">
+
+        </div>
+        <div class="tabc" ng-bind-html="summary.content4" ng-switch-when="4" id="dropdown2">
+
+        </div>
+
+
+</div>
+
+ </section>
+
+
+</div>

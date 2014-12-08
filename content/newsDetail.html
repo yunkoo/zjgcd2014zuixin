@@ -1,0 +1,21 @@
+<style>
+    @media (min-width: 768px) {
+        article{width: 70%;margin: 0 auto;}
+    }
+    img{max-width: 100% !important;}
+    #articleHeader {border-bottom:1px dashed #ccc;}
+    #articleHeader h4 {text-align:center; font-weight:bold;  }
+    #articleHeader .time {display:block;  text-align:right; }
+</style>
+<div ng-controller="newsDetailCtrl" class="content">
+    <!--<article class="well well-lg">-->
+    <article>
+        <div id="articleHeader">
+            <h4>{{newsDetail.title}}</h4>
+            <small class="time">发布时间：{{newsDetail.createtime}}</small>
+            <p></p>
+        </div>
+        <p></p>
+        <p data-ng-bind-html="newsDetail.content"></p>
+    </article>
+</div>

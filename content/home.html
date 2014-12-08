@@ -1,0 +1,61 @@
+<div data-ng-controller="homeCtrl" class="contentNoWebkitTouch" id="homeContent">
+    <link rel="stylesheet" href="css/webfont/fontello/css/fontello.css"/>
+    <link rel="stylesheet" href="css/home.css"/>
+    <!-- the menu -->
+    <ul id="hex">
+        <li class="p1" touchact="skew1">
+            <a nav-to="/companycard">
+                <b></b>
+                <span class="icon-vcard">企业名片</span>
+                <em></em>
+            </a>
+        </li>
+        <li touchact="skew2">
+            <a nav-to="/news">
+                <b></b>
+                <span class="icon-rss">新闻资讯</span>
+                <em></em>
+            </a>
+        </li>
+        <li class="p2" touchact="skew3">
+            <a nav-to="/question">
+                <b></b>
+                <span class="icon-help">疑问解答</span>
+                <em></em>
+            </a>
+        </li>
+        <li class="p2" touchact="skew4">
+            <a nav-to="/goods">
+                <b></b>
+                <span class="icon-basket">产品展示</span>
+                <em></em>
+            </a>
+        </li>
+        <li class="p2" touchact="skew5">
+            <a nav-to="/knowledge">
+                <b></b>
+                <span class="icon-book-open">行业知识</span>
+                <em></em>
+            </a>
+        </li>
+        <li class="p1 p2" touchact="skew6">
+            <a nav-to="/center">
+                <b></b>
+                <span class="icon-user">个人中心</span>
+                <em></em>
+            </a>
+        </li>
+        <li class="p2 " touchact="skew7">
+            <a nav-to="barList">
+                <b></b>
+                <span class="icon-users">互动专区</span>
+                <em></em>
+            </a>
+        </li>
+    </ul>
+    <div id="new-comment-tips" nav-to="/center" ng-show="hasNewComment">
+        <span class="icon-comment">{{commentTipNum}}</span>
+    </div>
+
+</div>
+

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html ng-app="ylz">
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon-precomposed" href="icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="昌达实业" />
+
+    <meta name="viewport" content="target-densitydpi=medium-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>昌达实业</title>
+
+    <link rel="stylesheet" href="libs/bootStrap/css/bootstrap.css">
+    <!--<link rel="stylesheet" href="libs/bootStrap/css/bootstrap-theme.css">-->
+
+    <script src="libs/jquery.js"></script>
+    <script src="libs/angular.1.1.5.js"></script>
+
+    <script src="libs/angular-hammer/hammer.min.js"></script>
+    <script src="libs/angular-hammer/angular-hammer.js"></script>
+
+    <!--<link rel="stylesheet" href="libs/mobile-nav.css">-->
+
+    <!--Android时启用-->
+    <link rel="stylesheet" href="libs/mobile-nav-android.css">
+
+    <script src="libs/mobile-nav.min.js"></script>
+
+    <script src="js/serverurl.js"></script>
+    <script src="js/config.js"></script>
+
+
+    <link rel="stylesheet" href="css/need.css">
+    <link rel="stylesheet" href="css/component.css">
+    <link rel="stylesheet" href="css/pagination.css">
+
+</head>
+
+<body ng-controller="mainCtrl">
+
+
+<!--header开始-->
+
+
+<header ng-controller="headerCtrl" id="my_header"
+     ng-init="tt.pTitle='';tt.bTitle=''"
+     class="beenBlur navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+
+        <p  ng-mouseup="historyBack()" touchact="skew3"
+           ng-if="tt.bTitle" class="navbar-text pull-left my_backbtn">
+            <a><span class="glyphicon glyphicon-chevron-left"></span>{{tt.bTitle}}</a>
+        </p>
+
+        <button ng-if="!customHeaderBtn" type="button" class="navbar-toggle my_navcollapseBtn" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <p ng-if="customHeaderBtn" hm-tap="customBtnClicked($event)"
+           ng-bind-html="customHeaderBtn" id="customHeaderBtn"
+           class="navbar-text pull-right">
+        </p>
+
+        <h1 class="navTitle">{{tt.pTitle}}</h1>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <nav id="my_headerCollapse" class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+            <li ng-class="navActiveClass[0]">
+                <a nav-to="/">首页</a>
+            </li>
+            <li ng-class="navActiveClass[1]">
+                <a nav-to="/summary">企业概况</a>
+            </li>
+            <li ng-class="navActiveClass[2]">
+                <a nav-to="/goods">产品展示</a>
+            </li>
+            <li ng-class="navActiveClass[3]">
+                <a nav-to="/news">新闻资讯</a>
+            </li>
+            <li ng-class="navActiveClass[4]">
+                <a nav-to="/barList">互动专区</a>
+            </li>
+        </ul>
+
+    </nav><!-- /.navbar-collapse -->
+</header>
+
+<!--header结束-->
+<mobile-view>
+
+</mobile-view>
+
+<footer>
+    <div ng-if="pagination" id='pagination' class="row" >
+         <!--data-ng-controller="paginationCtrl"-->
+
+        <div hm-tap="pagination.prePage()" touchact="skewTop"
+             id="prePage" class="pageinationBtn col-xs-4 flexbox-center {{pagination.prePagedisable}}">
+            <span class="glyphicon glyphicon-circle-arrow-left"></span>
+        </div>
+        <div id="pageNow" hm-tap="pagination.middleBtn()" touchact="skewTop"
+             ng-bind-html="pagination.text" class="pageinationBtn col-xs-4 flexbox-center">
+
+        </div>
+        <div hm-tap="pagination.nextPage()" touchact="skewTop"
+                id="pageNext" class="pageinationBtn col-xs-4 flexbox-center {{pagination.nextPagedisable}}">
+            <span class="glyphicon glyphicon-circle-arrow-right"></span>
+        </div>
+
+    </div>
+</footer>
+ <!--<div id="water">-->
+
+ <!--</div>-->
+
+<div id="ajax-loading"><h1>...</h1></div>
+
+</body>
+
+<script src="js/services/ajaxNormalizerModule.js"></script>
+<script src="js/services/ngStorage.js"></script>
+<script src="libs/angular-sanitize.min.js"></script>
+
+<script src="js/boot.js"></script>
+
+<script src="js/controllers/headerCtrl.js"></script>
+<script src="js/controllers/homeCtrl.js"></script>
+
+<script src="js/route.js"></script>
+<script src="js/services/service.js"></script>
+
+<!--<script src="js/services/cacher.js"></script>-->
+<script src="js/services/loading.js"></script>
+
+
+<script src="js/controllers/mainCtrl.js"></script>
+
+<script src="js/filter.js"></script>
+
+<script defer src="js/controllers/goodsCtrl.js"></script>
+<script defer src="js/controllers/goodslistCtrl.js"></script>
+<script defer src="js/controllers/goodsDetailCtrl.js"></script>
+<script defer src="js/controllers/morePicCtrl.js"></script>
+
+<script defer src="js/controllers/cardCtrl.js"></script>
+<script defer src="js/controllers/infoCtrl.js"></script>
+<script defer src="js/controllers/newsCtrl.js"></script>
+<script defer src="js/controllers/newsDetailCtrl.js"></script>
+<script defer src="js/controllers/knowledgeCtrl.js"></script>
+<script defer src="js/controllers/summaryCtrl.js"></script>
+<script defer src="js/controllers/questionCtrl.js"></script>
+<script defer src="js/controllers/loginCtrl.js"></script>
+<script defer src="js/controllers/registerCtrl.js"></script>
+<script defer src="js/controllers/centerCtrl.js"></script>
+<script defer src="js/controllers/bar/barlistCtrl.js"></script>
+<script defer src="js/controllers/bar/postlistCtrl.js"></script>
+<script defer src="js/controllers/bar/addnewpost.js"></script>
+<script defer src="js/controllers/bar/postviewCtrl.js"></script>
+<script defer src="js/controllers/bar/addnewcomm.js"></script>
+<script defer src="js/controllers/bar/replyPostsCtrl.js"></script>
+
+<script defer src="libs/bootStrap/js/bootstrap.min.js"></script>
+
+<script src="js/other/other.js"></script>
+<script type="text/javascript" src="phonegap.js"></script>
+
+
+<!--<script src="js/other/myswipe.js"></script>-->
+
+
+</html>

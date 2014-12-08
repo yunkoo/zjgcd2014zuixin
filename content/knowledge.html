@@ -1,0 +1,28 @@
+<div ng-controller="knowledgeCtrl" class="content" scrollable>
+    <link rel="stylesheet" href="css/knowledge.css"/>
+    <div class="panel panel-primary">
+        <ul id="knowledgeTab" class="nav nav-pills">
+            <li class="active">
+                <a data-toggle="tab" data-target="#theKnowledge"  hm-tap="getContent(1)">行业知识</a>
+            </li>
+            <li>
+                <a data-toggle="tab" data-target="#theStory" hm-tap="getContent(2)">品牌故事</a>
+            </li>
+        </ul>
+
+        <div id="myTabContent" class="tab-content panel-body">
+            <div class="tab-pane fade active in" id="theKnowledge">
+                <p data-ng-bind-html="knowledge.content1">
+
+                </p>
+            </div>
+            <div class="tab-pane fade" id="theStory">
+                <p data-ng-bind-html="knowledge.content2">
+
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,48 @@
+<style>
+    #infoTable {
+        background-color: #ffffff;
+    }
+    .nowrap {white-space: nowrap;}
+</style>
+<div ng-controller="infoCtrl" class="content">
+    <div id='infoAlert' class="pureBlock"></div>
+    <table id="infoTable" class="table table-bordered table-striped">
+        <tbody>
+            <tr >
+                <td colspan="2" style="text-align:center;"><img ng-src="{{imgdir + companyInfo.logo}}" /></td>
+            </tr>
+            <tr>
+                <td class="nowrap">企业名</td>
+                <td>{{companyInfo.companyname}}</td>
+            </tr>
+            <tr>
+                <td class="nowrap">联系人</td>
+                <td>{{companyInfo.contact}}</td>
+            </tr>
+            <tr data-ng-repeat="i in companyInfo.tel">
+                <td rowspan="{{companyInfo.tel.length}}" ng-if="$index === 0" class="nowrap">联系电话</td>
+                <td><a ng-href="tel:{{i}}">{{i}}</a></td>
+            </tr>
+            <tr>
+                <td class="nowrap">微博账号</td>
+                <td>{{companyInfo.micro_account}}</td>
+            </tr>
+            <tr data-ng-repeat="qq in companyInfo.qq_account">
+                <td rowspan="{{companyInfo.qq_account.length}}" ng-if="$index === 0"  class="nowrap">qq账号</td>
+                <td>{{qq}}</td>
+            </tr>
+            <tr>
+                <td  class="nowrap">微信账号</td>
+                <td>{{companyInfo.wechat_account}}</td>
+            </tr>
+            <tr>
+                <td  class="nowrap">公司网址</td>
+                <td>{{companyInfo.url}}</td>
+            </tr>
+            <tr>
+                <td colspan="2" data-ng-bind-html="companyInfo.description">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

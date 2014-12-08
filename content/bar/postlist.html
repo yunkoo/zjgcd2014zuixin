@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="css/webfont/fontello/css/fontello.css"/>
+<style>
+    #pageNow span{
+      font-size:inherit;
+    }
+    #forumbgBlock{
+        position: relative;
+        margin-top: -5%;
+        margin-right: -0.8em;
+        margin-left: -0.8em;
+        height: 90%;
+        background-position: 50% 0;
+        background-size: cover;
+        background-repeat: repeat-x;
+        margin-bottom: -7em;
+    }
+
+    .userheadimg{
+        width: 1em;height: 1em;
+        margin-right: 0.8em;
+    }
+    .lefttext{
+        text-align: left;float: left;margin-right: 2.3em;
+    }
+    .listtext{
+        text-align: right;
+    }
+    .none{
+        visibility: hidden;
+        background:none;
+        position: absolute;
+    }
+    #forumTitle{
+        position: absolute;
+        bottom: 50%;
+        text-align: center;
+        width: 100%;
+        /*transform: translate3d(0, 0px, 0);*/
+        /*-webkit-transform: translate3d(0, 0px, 0);*/
+    }
+    #forumTitle h2{
+        color: #ffffff;
+        font-size: 2em;
+        font-weight: bold;
+        display: inline;
+        padding: 0.2em;
+        box-shadow: 0 0 5px black;
+    }
+
+</style>
+<div id="postlistContent"
+     data-ng-controller="postlistCtrl" class="content hasPagination">
+    <div id="forumbgBlock" class="pureBlock"
+         ng-class="{true:'', false:'none'}[postlist.length>5]"
+         ng-style="forumbgStyle">
+        <div id="forumTitle" class="pureBlock">
+            <h2 class="blueBack5" ng-if="forumTitle">{{forumTitle}}</h2>
+        </div>
+
+    </div>
+
+    <div id="postlist" class="list-group">
+        <a nav-to="/postview/{{post.pid}}" class="list-group-item" ng-repeat="post in postlist">
+            <h4 class="list-group-item-heading">
+                <img class="userheadimg media-object pull-left" src="{{imgURL+post.userhead}}" />
+                {{post.subject | truncate:60}}
+            </h4>
+            <p class="lefttext">
+                <span class="icon-chat" ng-class="{true:'carrotText', false:''}[post.comment_num>10]"></span>
+                {{post.comment_num}}</p>
+            <p class="listtext list-group-item-text">{{post.create_time}}</p>
+        </a>
+    </div>
+</div>

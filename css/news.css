@@ -1,0 +1,23 @@
+
+@media (max-width: 767px) {
+#newsTab>li{width: 50%}
+}
+
+
+@media (min-width: 768px) {
+    #newsTab,#newsTabContent {width: 70%;margin:0 auto;font-size: 1.25em}
+
+    #newsTab li { text-align:center; vertical-align: middle; margin-left:0 !important; width:50%; }
+    #newsTab li .trade-trend {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border:1px solid #428BCA;
+    }
+
+    #newsTab li .company-news {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        border:1px solid #428BCA;
+    }
+}
+.tabc {width:100%;}

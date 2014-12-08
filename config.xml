@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.yunkoo.zjgcd"
+        versionCode="11"
+        version   = "1.1.0">
+    <name>昌达实业</name>
+    <description>昌达实业手机客户端</description>
+    <author href="http://www.szyunkoo.com" email="kehuduankaifa@163.com">yunkoo</author>
+    <!--<preference name="phonegap-version" value="2.9.0" />-->
+    <preference name="orientation" value="default" />
+    <preference name="target-device" value="universal" />
+    <preference name="fullscreen" value="false" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="prerendered-icon" value="true" />
+    <!--<preference name="stay-in-webview" value="true" />-->
+    <preference name="ios-statusbarstyle" value="black-translucent" />
+    <preference name="detect-data-types" value="true" />
+    <preference name="exit-on-suspend" value="false" />
+    <preference name="show-splash-screen-spinner" value="true" />
+    <preference name="auto-hide-splash-screen" value="true" />
+    <preference name="android-minSdkVersion" value="13" />
+    <preference name="load-url-timeout" value="25000" />
+
+    <gap:splash src="splash.png" gap:platform="android" />
+    <icon src="icon120X120.png" gap:platform="android" />
+
+
+    <icon src="icon57X57.png" gap:platform="ios" width="57" height="57" />
+    <icon src="icon72X72.png" gap:platform="ios" width="72" height="72" />
+    <!--iOS7 iPhone / iPod Touch of exactly '120x120' pixels, in .png format.-->
+
+    <icon src="icon120X120.png" gap:platform="ios" width="120" height="120" />
+    <!-- retina iPad support: PhoneGap 2.5.0+ only -->
+    <icon src="icon144X144.png" gap:platform="ios" width="144" height="144" />
+    <icon src="icon152X152.png" gap:platform="ios" width="152" height="152" />
+
+    <gap:splash src="splash.png" gap:platform="ios" width="568" height="800" /><!-- Portrait -->
+    <gap:splash src="splash-1536X2008.png" gap:platform="ios" width="1536" height="2008" /><!-- Portrait -->
+    <gap:splash src="splash-2048X1496.png" gap:platform="ios" width="2048" height="1496" /><!-- Landscape -->
+
+
+    <!--<feature name="http://api.phonegap.com/1.0/file"/>-->
+    <!--<feature name="http://api.phonegap.com/1.0/geolocation"/>-->
+    <preference name="permissions" value="none" />
+
+    <access origin="*" />
+
+    <!--<gap:plugin name="com.adobe.plugins.pushplugin" />-->
+
+    <!--<plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />-->
+    <!--<plugin name="InAppBrowser" value="CDVInAppBrowser" />-->
+
+    <!--<plugin name="Notification" value="org.apache.cordova.Notification"/>-->
+    <!--<plugin name="Notification" value="CDVNotification" />-->
+</widget>
+
+<!--<gap:splash src="splash/splash-480x320.png"   gap:platform="ios" width="320"  height="480"  />&lt;!&ndash; Regular iPhone4 &ndash;&gt;-->
+<!--<gap:splash src="splash/splash-640x960.png"   gap:platform="ios" width="640"  height="960"  />&lt;!&ndash; Retina iPhone4 &ndash;&gt;-->
+<!--<gap:splash src="splash/splash-640x1136.png"  gap:platform="ios" width="640"  height="1136" />&lt;!&ndash; iPhone5 &ndash;&gt;-->
+<!--<gap:splash src="splash/splash-768x1004.png"  gap:platform="ios" width="768"  height="1004" />&lt;!&ndash; iPad Portrait &ndash;&gt;-->
+<!--<gap:splash src="splash/splash-1024x748.png"  gap:platform="ios" width="1024" height="748"  />&lt;!&ndash; iPad Landscape &ndash;&gt;-->
+
+        <!-- Retina iPads: Requires PhoneGap 2.5.0 or higher -->
+<!--<gap:splash src="splash/splash-1536x2008.png" gap:platform="ios" width="1536" height="2008" />&lt;!&ndash; Portrait &ndash;&gt;-->
+<!--<gap:splash src="splash/splash-2048x1496.png" gap:platform="ios" width="2048" height="1496" />&lt;!&ndash; Landscape &ndash;&gt;-->
+
+<!--<gap:splash src="splash/splash-320x426.png" gap:platform="android" gap:density="ldpi"  width="320" height="426" />-->
+<!--<gap:splash src="splash/splash-320x470.png" gap:platform="android" gap:density="mdpi"  width="320" height="470" />-->
+<!--<gap:splash src="splash/splash-480x640.png" gap:platform="android" gap:density="hdpi"  width="480" height="640" />-->
+<!--<gap:splash src="splash/splash-720x960.png" gap:platform="android" gap:density="xhdpi" width="720" height="960" />-->

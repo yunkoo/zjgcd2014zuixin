@@ -1,0 +1,40 @@
+
+/*吸附式二级导航*/
+
+@media (max-width: 767px) {
+    .content {
+        overflow:hidden;
+        -webkit-overflow-scrolling: auto;
+    }
+    .adsorbNav-tabContentbox{
+        overflow-x:hidden;
+        overflow-y:scroll;
+        -webkit-overflow-scrolling: touch;
+        /*position: absolute;*/
+        padding-top:40px;
+        max-height: 100%;
+    }
+    .navbar-inverse{border-bottom: none;}
+    .adsorbNav {
+        position: absolute;z-index: 2;
+        top:-1px;left: 0;right: 0;
+        background-color: #222222
+    }
+    .adsorbNav li { text-align:center; vertical-align: middle; margin-left:0 !important;}
+
+    .adsorbNav > li > a{
+        border-radius: 0;
+        color:#808080;
+    }
+    .adsorbNav > li > a:hover,.adsorbNav > li.active > a:hover{
+        background-color: inherit;
+        border: none;
+        color: #f5f5f5;
+    }
+    .adsorbNav li.active a{
+        background-color: inherit;
+        border: none;
+        color: #f5f5f5;
+    }
+
+}
